@@ -40,7 +40,7 @@ IF ERRORLEVEL 0 (
 	REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v "fAllowToGetHelp" /t REG_DWORD /d 0 /f
 )
 
-ECHO "Enable Remote Destop Protocol (RDP)"
+ECHO "Enable Remote Desktop Protocol (RDP)"
 REG QUERY "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v "fDenyTSConnections" | Find "0x0"
 IF ERRORLEVEL 0 (
 	REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v "fDenyTSConnections" /t REG_DWORD /d 0 /f
