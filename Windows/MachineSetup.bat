@@ -28,6 +28,18 @@ IF ERRORLEVEL 0 (
 	REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "StoreAppsOnTaskbar" /t REG_DWORD /d 0 /f
 )
 
+ECHO "Enable DOS Prompt Quick Edit"
+REG QUERY "HKEY_CURRENT_USER\Console" /v "QuickEdit" | Find "0x0"
+IF ERRORLEVEL 0 (
+	REG ADD "HKEY_CURRENT_USER\Console" /v "QuickEdit" /t REG_DWORD /d 1 /f
+)
+
+ECHO "Enable DOS Prompt Insert Mode"
+REG QUERY "HKEY_CURRENT_USER\Console" /v "InsertMode" | Find "0x0"
+IF ERRORLEVEL 0 (
+	REG ADD "HKEY_CURRENT_USER\Console" /v "InsertMode" /t REG_DWORD /d 1 /f
+)
+
 ECHO "Disable Windows System Restore"
 REG QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore" /v "DisableSR" | Find "0x0"
 IF ERRORLEVEL 0 (
