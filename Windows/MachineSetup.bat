@@ -76,4 +76,8 @@ CALL cinst VisualStudio2013Ultimate
 CALL cinst VS2013.4
 CALL cinst resharper
 
+REM This patch is for VS2013 Update 4
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "$dl=New-Object Net.WebClient;$dl.DownloadFile('http://download.microsoft.com/download/3/8/F/38F49568-2B7F-43B9-A316-ABF46F5058F2/VS12-KB3018885.exe', $env:TEMP + '\VS12-KB3018885.exe');"
+CALL "%TEMP%\VS12-KB3018885.exe" /Silent /NoRestart
+
 ECHO "Script complete. Restart now."
