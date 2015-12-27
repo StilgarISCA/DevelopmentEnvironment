@@ -22,7 +22,7 @@ IF ERRORLEVEL 0 (
 	REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSmallIcons" /t REG_DWORD /d 1 /f
 )
 
-ECHO "Remove Windows Store Apps icon from the Taskbar"
+ECHO "Don't show Windows Store Apps on the Taskbar"
 REG QUERY "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "StoreAppsOnTaskbar" | Find "0x0"
 IF ERRORLEVEL 0 (
 	REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "StoreAppsOnTaskbar" /t REG_DWORD /d 0 /f
