@@ -65,6 +65,9 @@ choco feature enable -n allowGlobalConfirmation
 ECHO "Installing Git"
 CALL cinst git
 
+ECHO "Installing Nano"
+CALL cinst nano
+
 ECHO "Installing Notepad++"
 CALL cinst notepadplusplus
 
