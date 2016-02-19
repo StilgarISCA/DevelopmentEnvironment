@@ -82,6 +82,7 @@ CALL cinst ccleaner
 
 ECHO "Installing Fonts"
 CALL cinst envycoder
+CALL cinst dejavufonts
 
 ECHO "Installing Visual Studio Components"
 IF NOT EXIST "%PROGRAMFILES(X86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" (
