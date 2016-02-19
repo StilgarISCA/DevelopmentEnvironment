@@ -80,6 +80,9 @@ CALL cinst classic-shell -installArgs ADDLOCAL=ClassicStartMenu
 ECHO "Installing CCleaner"
 CALL cinst ccleaner
 
+ECHO "Installing Fonts"
+CALL cinst envycoder
+
 ECHO "Installing Visual Studio Components"
 IF NOT EXIST "%PROGRAMFILES(X86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" (
    ECHO Installing Visual Studio 2015
