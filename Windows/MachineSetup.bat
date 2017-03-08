@@ -58,6 +58,9 @@ IF ERRORLEVEL 0 (
 	REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v "fDenyTSConnections" /t REG_DWORD /d 0 /f
 )
 
+ECHO "Disableing Hibernate"
+powercfg.exe -h off
+
 ECHO "Installing Chocolatey"
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 choco feature enable -n allowGlobalConfirmation
