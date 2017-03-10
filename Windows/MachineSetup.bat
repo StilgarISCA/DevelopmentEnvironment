@@ -68,6 +68,9 @@ choco feature enable -n allowGlobalConfirmation
 ECHO "Installing Git"
 CALL cinst git
 
+ECHO "Installing Nano"
+CALL cinst nano
+
 ECHO "Installing Notepad++"
 CALL cinst notepadplusplus
 
@@ -76,6 +79,13 @@ CALL cinst 7zip
 
 ECHO "Installing Classic Shell"
 CALL cinst classic-shell -installArgs ADDLOCAL=ClassicStartMenu
+
+ECHO "Installing CCleaner"
+CALL cinst ccleaner
+
+ECHO "Installing Fonts"
+CALL cinst envycoder
+CALL cinst dejavufonts
 
 ECHO "Installing Visual Studio Components"
 IF NOT EXIST "%PROGRAMFILES(X86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" (
